@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background-image: linear-gradient(45deg, #caf0f8, #ade8f4, #90e0ef, #48cae4, #00b4d8, #0096c7, #0077b6, #023e8a);
+}
+
+header nav{
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    && ul{
+        margin: 20px;
+        border-top: 3px solid #3bbaff;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        && li a{
+            color: #d5dee7;
+            padding: 0 0 2px 0;
+            transition: .2s;
+            cursor: pointer;
+
+            &&:hover{
+                color: #ffffff;
+            }
+
+        }
+    }
+
+}
+
+header section{
+    width: 30vw;
+    height: 100vh;
+    position: relative;
+
+    && img{
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        z-index: 60;
+        border-radius: 2cap;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+.bg_division{
+    box-shadow:
+    2.8px 2.8px 2.2px #00000000,
+    6.7px 6.7px 5.3px #00000001,
+    22.3px 22.3px 17.9px #00000005,
+    41.8px 41.8px 33.4px #00000007,
+    100px 100px 80px #00000009
+    ;
+}
+
+div#bg_division1{
+    padding: 20px;
+    background-image: linear-gradient(45deg, #f8f9fa2b, #e9ecef2c, #dee2e62b, #ced4da2b, #adb5bd29, #6c757d29, #4950572a, #343a4029, #2125292b);
+    width: 40vw;
+    height: 30vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(5%, -90%);
+    border-radius: 9cap;
+
+    && h1{
+        margin: 0 0 10px 27%;
+    }
+
+    && p{
+        margin-left: 27%;
+        padding-right: 20px;
+        text-align: justify;
+        font-size: 10pt;
+    }
+
+}
+
+article#more_about_us{
+    width: 30%;
+    border-radius: 67% 33% 70% 30% / 43% 57% 43% 57%;
+    height: 70%;
+    position: absolute;
+    overflow: hidden;
+    top: 60%;
+    display: flex;
+    font-size: 10pt;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    right: -10%;
+    transform: translate(-50%, -50%);
+    background-color: #7ad0e1b6;
+
+    && p{
+        width: 65%;
+        margin-bottom: -65%;
+        transition: .6s;
+        text-align: justify;
+        hyphens: auto;
+    }
+
+}
+
+.svg{
+    scale: .2;
+    top: 50%;
+    left: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#svg2{
+    top: 0%;
+    left: 73%;
+}
+
+main h1{
+    width: 200px;
+    padding: 20px;
+    margin: 50px auto;
+}
+
+main section#meeting{
+    height: 100vh;
+}
+
+main section#meeting{
+    position: relative;
+}
+
+main section#meeting #blocks_container{
+    display: flex;
+    padding: 0 0 0 11%;
+    gap: 20%;
+
+    && img{
+        width: 100px;
+        height: 50px;
+        background-image: url();
+        margin: 30px 0 -170px 0;
+        scale: 2;
+    }
+
+    && .valencias ul li{
+        list-style-type: disc;
+    }
+
+    && .primaryData{
+        margin: 20px 0 -150px 0;
+    }
+
+    && section.member-section{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+}
+
+main section#meeting .block{
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    border-radius: 2cap;
+    height: 350px;
+    background-color: #b1b1b1;
+}
+
+div#moving{
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    display: flex;
+    padding: 0 5% 0 5%;
+
+    && #after{
+        font-size: 40pt;
+        position: absolute;
+        padding: 1%;
+        cursor: pointer;
+        transition: .1s;
+        border-radius: 2cap;
+        right: 5%;
+
+        &&:hover{
+            background-color: #80808086;
+        }
+
+    }
+    && #before{
+        font-size: 40pt;
+        padding: 1%;
+        cursor: pointer;
+        transition: .1s;
+        border-radius: 2cap;
+
+        &&:hover{
+            background-color: #80808086;
+        }
+
+    }
+}
+
+section#faq{
+    background-color: #f0f8ff;
+
+    && h1{
+        width: 400px;
+        margin: auto;
+        text-align: center;
+    }
+
+}
+
+main section#meeting .block p.nome::before{
+    content: "Nome: ";
+}
+
+input{
+    display: none;
+}
+
+main section#meeting .block p.idade::before{
+    content: "Idade: ";
+}
+
+#more_about_us h2{ 
+    display: inline-block;
+    overflow: hidden; 
+    margin: auto;
+    transition: 1s;
+    width: 0;
+    white-space: nowrap; 
+} 
+  
+@keyframes typing{ 
+    from{ 
+        width: 0; 
+    } 
+    to{ 
+        width: 30%; 
+    } 
+} 
+
