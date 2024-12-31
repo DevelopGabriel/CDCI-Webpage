@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    list-style-type: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -25,6 +24,8 @@ header nav{
         margin: 20px;
         border-top: 3px solid #3bbaff;
         display: flex;
+        list-style-type: none;
+
         flex-direction: column;
         gap: 5px;
 
@@ -43,6 +44,18 @@ header nav{
 
 }
 
+.wraper {
+    padding: 80px;
+}
+
+.swiper-button-prev, .swiper-button-next{
+    color: black;
+}
+
+.swiper-scrollbar{
+    display: none;
+}
+
 header section{
     width: 30vw;
     height: 100vh;
@@ -59,6 +72,10 @@ header section{
         transform: translate(-50%, -50%);
     }
 
+}
+
+.swiper-pagination{
+display: none;
 }
 
 .bg_division{
@@ -136,29 +153,20 @@ article#more_about_us{
 }
 
 main h1{
-    width: 200px;
-    padding: 20px;
-    margin: 50px auto;
+    width: 100%;
+    text-align: center;
 }
 
-main section#meeting{
-    height: 100vh;
-}
 
-main section#meeting{
-    position: relative;
-}
+
 
 main section#meeting #blocks_container{
-    display: flex;
-    padding: 0 0 0 11%;
-    gap: 20%;
 
     && img{
         width: 100px;
         height: 50px;
         background-image: url();
-        margin: 30px 0 -170px 0;
+        margin: 30px 20px -170px 0;
         scale: 2;
     }
 
@@ -168,27 +176,21 @@ main section#meeting #blocks_container{
 
     && .primaryData{
         margin: 20px 0 -150px 0;
-    }
 
-    && section.member-section{
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
     }
-
 }
 
 main section#meeting .block{
-    width: 300px;
+    user-select: none;
+    transition: .2s;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 10px;
     border-radius: 2cap;
     height: 350px;
-    background-color: #b1b1b1;
+    background-color: #d8d8d8;
 }
+ 
 
 div#moving{
     position: absolute;
@@ -225,27 +227,15 @@ div#moving{
     }
 }
 
-section#faq{
-    background-color: #f0f8ff;
 
-    && h1{
-        width: 400px;
-        margin: auto;
-        text-align: center;
-    }
-
-}
 
 main section#meeting .block p.nome::before{
     content: "Nome: ";
+    font-weight: 600;
 }
 
 input{
     display: none;
-}
-
-main section#meeting .block p.idade::before{
-    content: "Idade: ";
 }
 
 #more_about_us h2{ 
@@ -256,7 +246,45 @@ main section#meeting .block p.idade::before{
     width: 0;
     white-space: nowrap; 
 } 
-  
+
+section#faq{
+    background-color: #f0f8ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 56vh;
+
+    && h1{
+        width: 400px;
+        text-align: center;
+    }
+
+}
+
+.faq-container{
+    width: 610px;
+    gap: 10px;
+    display: grid;
+    margin-bottom: 20px;
+    padding: 8px 0px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.list-item{
+    width: 300px;
+    position: relative;
+    border-radius: 2cap;
+    padding: 20px;
+    background-color: #e2e2e2;
+
+    && p{
+        margin: 15px 0 0 0;
+    }
+
+}
+
+
 @keyframes typing{ 
     from{ 
         width: 0; 
@@ -264,5 +292,48 @@ main section#meeting .block p.idade::before{
     to{ 
         width: 30%; 
     } 
-} 
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    div#bg_division1{
+        display: none;        
+    }
+
+    header section{
+        width: 100vw;
+        background-repeat: no-repeat;
+        background-image: url(https://img.freepik.com/free-photo/people-working-together-animation-studio_23-2149208028.jpg?t=st=1735121247~exp=1735124847~hmac=900ddf0d9719b62b99be8f337ac2dc511af0bdad03f1f675f537607091053f48&w=360);
+        filter: brightness(70%);
+        background-size: 100vw 100vh;
+        && img{
+            display: none;
+        }
+    }
+
+    #more_about_us_container{
+        height: 100vh;
+        background-color: white;
+    }
+
+    header nav{
+        z-index: 20;
+        && li a{
+            color: black;
+        }
+    }
+
+    main section#meeting .block{
+        grid-template-columns: 1fr;
+    }
+
+    main section#meeting #blocks_container{
+        && img{
+            margin: 30px auto -35px;
+        }
+        && .valencias h3{
+            display: none;
+        }
+    }
+
+}
 
