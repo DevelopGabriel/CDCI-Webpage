@@ -11,6 +11,7 @@ html{
 }
 
 body{
+    width: 100vw;
     overflow-x: hidden;
     background-image: linear-gradient(45deg, #caf0f8, #ade8f4, #90e0ef, #48cae4, #00b4d8, #0096c7, #0077b6, #023e8a);
 }
@@ -103,11 +104,15 @@ div#bg_division1{
         margin: 0 0 10px 27%;
     }
 
-    && p{
+    && p#p1280{
         margin-left: 27%;
         padding-right: 20px;
         text-align: justify;
         font-size: 10pt;
+    }
+
+    && p#p320{
+        display: none;
     }
 
 }
@@ -140,16 +145,31 @@ article#more_about_us{
 
 .svg{
     scale: .2;
-    top: 50%;
-    left: 50%;
     z-index: 20;
     transform: translate(-50%, -50%);
     position: absolute;
 }
 
+#svg1{
+    top: 50%;
+    left: 50%;
+}
+
 #svg2{
     top: 0%;
     left: 73%;
+}
+
+#svg3{
+    display: none;
+}
+
+#svg1-2{
+    display: none;
+}
+
+#svg2-2{
+    display: none;
 }
 
 main h1{
@@ -174,9 +194,8 @@ main section#meeting #blocks_container{
         list-style-type: disc;
     }
 
-    && .primaryData{
-        margin: 20px 0 -150px 0;
-
+    && .nome{
+        margin: 10px 0 -150px 0;
     }
 }
 
@@ -300,12 +319,67 @@ section#faq{
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+
     div#bg_division1{
-        display: none;        
+        background-image: none;
+        display: flex;
+        width: 90vw;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-50%, -50%);
+        
+        && p{
+            display: none;
+
+        }
+        
+        && h1{
+            font-size: 16pt;
+            width: 100vw;
+            color: #fff;
+            margin: 0;
+        }
+
+    }
+
+    #svg1{
+        display: none;
+    }
+
+    #svg2{
+        display: none;
+    }
+
+
+    #svg1-2{
+        display: block;
+        scale: .15;
+        top: -180px;
+        right: 10px;
+        /* animation: appear 3s linear;
+        animation-timeline: view(40%); */
+        position: absolute;
+    }
+
+    #svg2-2{
+        display: block;
+        scale: .15;
+        top: 20vh;
+        left: -10vw;
+        position: absolute;
+    }
+
+    #svg3{
+        display: inline;
+        scale: .15;
+        top: 30vh;
+        right: -40vw;
+        position: absolute;
     }
 
     header section{
         width: 100vw;
+        height: 100vh;
         background-repeat: no-repeat;
         background-image: url(https://img.freepik.com/free-photo/people-working-together-animation-studio_23-2149208028.jpg?t=st=1735121247~exp=1735124847~hmac=900ddf0d9719b62b99be8f337ac2dc511af0bdad03f1f675f537607091053f48&w=360);
         filter: brightness(70%);
@@ -315,9 +389,28 @@ section#faq{
         }
     }
 
-    #more_about_us_container{
-        height: 100vh;
+    article#more_about_us{
+        height: 50%;
+        width: 10%;
+        right: 0;
+        width: 100vw;
+        transform: translate(0, 0);
+        border-radius: 0;
+        top: 0;
         background-color: white;
+        position: relative;
+
+        && p{
+            margin-bottom: 20%;
+        }
+
+        h2{
+            transform: translate(0, 0);
+            width: 100%;
+            text-align: center;
+            margin: 10px 0 18px 10px;
+        }
+
     }
 
     header nav{
@@ -327,17 +420,75 @@ section#faq{
         }
     }
 
+    main h1{
+        margin: 10px 0 0 0;
+    }
+
+    .wraper{
+        height: 100vh;
+        position: relative;
+        padding: 40px 80px 80px 80px;
+    }
+
     main section#meeting .block{
         grid-template-columns: 1fr;
     }
 
     main section#meeting #blocks_container{
+        display: flex;
+        align-items: center;
         && img{
             margin: 30px auto -35px;
         }
         && .valencias h3{
             display: none;
         }
+    }
+
+    .faq-container{
+        width: 100%;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .list-item{
+        width: 250px;
+        position: relative;
+        border-radius: 2cap;
+        padding: 10px;
+        background-color: #e2e2e2;
+    
+        && p{
+            margin: 15px 0 0 0;
+            font-size: 10pt;
+            
+            && ul li{
+                font-size: 10pt;
+            }
+        }
+    
+    }
+
+    section#faq{
+        background-color: #f0f8ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: auto; 
+        
+        && h1{
+            font-size: 17pt;
+            margin-bottom: 10px;
+        }
+
+        && ul li{
+            list-style-type: none;
+        }
+        
     }
 
 }

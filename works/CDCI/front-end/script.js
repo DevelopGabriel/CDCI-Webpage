@@ -41,12 +41,6 @@ const tornando_visivel = () => {
   paragraph.style.marginBottom = '20%'
 }
 
-setTimeout(() => {
-  escrevendo()
-  setTimeout(elevando, 1300)
-  setTimeout(tornando_visivel, 1500)
-}, 900)
-
 class Member {
   constructor(nome, sexo) {
     this.nome = nome
@@ -66,15 +60,12 @@ class Member {
     const blockImg = this.createElement('img', { src: this.imgSrc })
     const pNome = this.createElement('p', { class: 'nome' }, `${this.nome}`)
 
-    const primaryData = this.createElement('div')
-    primaryData.append(pNome)
-
     const blockArticle = this.createElement('article', { class: 'valencias' })
     const blockArticleH3 = this.createElement('h3', {}, 'Valências')
     const list = this.createElement('ul')
 
     blockArticle.append(blockArticleH3, list)
-    block.append(blockImg, primaryData, blockArticle)
+    block.append(blockImg, pNome, blockArticle)
 
     blocks_container.appendChild(block)
   }
@@ -119,3 +110,24 @@ new Swiper('.wraper', {
     },
   },
 })
+
+const mediaQuery = window.matchMedia('(max-width: 480px)')
+function handleTabletChange(e) {
+  if (e.matches) {
+    let h1 = document.querySelector('.bg_division h1')
+    h1.innerHTML = 'Promovendo a inovação tecnológica'
+    let newLiContainer = document.querySelector('header > nav > ul')
+    let newLi = document.createElement('li')
+    let liLink = document.createElement('a', { href: '#more_about_us' })
+    newLi.appendChild(liLink)
+    newLiContainer.appendChild(newLi)
+  } else {
+    setTimeout(() => {
+      escrevendo()
+      setTimeout(elevando, 1300)
+      setTimeout(tornando_visivel, 1500)
+    }, 900)
+  }
+}
+mediaQuery.addListener(handleTabletChange)
+handleTabletChange(mediaQuery)
